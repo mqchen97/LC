@@ -12,7 +12,7 @@ var longestValidParentheses = function (s) {
         if (s[i] === ')') {
             if (s[i - 1] === '(') {
                 dp[i] = i - 2 >= 0 ? dp[i - 2] + 2 : 2
-                //去掉前面有效括号长度后是否可以组成'()'？
+                //去掉前面有效括号长度后是否可以组成'()'？[]
             } else if (s[i - dp[i - 1] - 1] === '(') {
                 dp[i] = i - dp[i - 1] - 2 >= 0 ? dp[i - dp[i - 1] - 2] + dp[i - 1] + 2 : dp[i - 1] + 2
             }
